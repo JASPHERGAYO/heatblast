@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root"; 
-$pass = ""; 
+$pass = "Parcival"; 
 $dbname = "pixelwizard";  // CHANGE THIS
 
 $conn = new mysqli($host, $user, $pass, $dbname);
