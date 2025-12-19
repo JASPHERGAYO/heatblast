@@ -426,7 +426,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['student_login'])) {
     <div class="login-wrapper">
         <div class="login-card">
             <h2>Login</h2>
-            <p>Select your user type to continue</p>
+            
             
             <!-- Show SweetAlert for URL parameters -->
             <?php if (isset($_GET['error']) || isset($_GET['verified'])): ?>
