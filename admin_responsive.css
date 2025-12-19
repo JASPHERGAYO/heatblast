@@ -1,0 +1,595 @@
+/* ========================================
+   ADMIN DASHBOARD RESPONSIVE STYLES
+   Mobile-first with burger menu navigation
+======================================== */
+
+/* Burger Menu Button - Hidden on desktop */
+.burger-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 15px;
+    z-index: 1001;
+    background: var(--primary);
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 196, 118, 0.3);
+    transition: all 0.3s ease;
+}
+
+.burger-menu:hover {
+    background: #00a86b;
+    transform: scale(1.05);
+}
+
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Burger menu animation when active */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ========================================
+   TABLET STYLES (900px and below)
+======================================== */
+@media (max-width: 900px) {
+
+    /* Show burger menu */
+    .burger-menu {
+        display: block;
+    }
+
+    /* Hide sidebar by default on tablet/mobile */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show sidebar when active */
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    /* Adjust main content */
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+        width: 100%;
+    }
+
+    /* Overlay when sidebar is open */
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    /* Tab header - make scrollable */
+    .tab-header {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .tab-header::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .tab-header::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 4px;
+    }
+
+    .tab-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        display: inline-block;
+    }
+
+    /* Stats grid - 2 columns on tablet */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Tables - horizontal scroll */
+    .table {
+        overflow-x: auto;
+        display: block;
+    }
+
+    .table table {
+        min-width: 800px;
+    }
+
+    /* Action buttons - stack vertically */
+    .action-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .action-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Filter section - stack filters */
+    .filter-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        width: 100%;
+    }
+
+    /* Profile details - single column */
+    .profile-details {
+        grid-template-columns: 1fr;
+    }
+
+    /* Violation stats - stack on tablet */
+    .violation-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Case details grid - single column */
+    .case-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   MOBILE STYLES (768px and below)
+======================================== */
+@media (max-width: 768px) {
+
+    /* Header adjustments */
+    .header {
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-info h1 {
+        font-size: 24px;
+    }
+
+    .header-info p {
+        font-size: 14px;
+    }
+
+    /* Stats grid - single column on mobile */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 1.8em;
+    }
+
+    /* Tab buttons - smaller on mobile */
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+        min-width: 100px;
+    }
+
+    .tab-content {
+        padding: 15px;
+    }
+
+    .tab-content h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* Form controls - full width */
+    .form-control {
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+        padding: 12px;
+    }
+
+    /* Buttons - full width and larger touch targets */
+    .btn {
+        padding: 14px 20px;
+        font-size: 15px;
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .action-buttons .btn {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    /* Tables - better mobile display */
+    .table th,
+    .table td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+
+    /* Profile section */
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        margin: 0 auto 15px;
+        width: 80px;
+        height: 80px;
+        font-size: 1.5em;
+    }
+
+    .profile-info h2 {
+        font-size: 20px;
+    }
+
+    .profile-info p {
+        font-size: 14px;
+    }
+
+    /* Detail groups */
+    .detail-group {
+        padding: 12px;
+    }
+
+    .detail-group h4 {
+        font-size: 16px;
+    }
+
+    .detail-group p {
+        font-size: 14px;
+        margin: 8px 0;
+    }
+
+    /* Violation stats */
+    .stat-box {
+        padding: 12px;
+    }
+
+    .stat-value {
+        font-size: 1.5em;
+    }
+
+    /* Status badges - slightly smaller */
+    .status-badge {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        margin: 20px;
+        padding: 15px;
+        max-height: 90vh;
+    }
+
+    /* Filters section */
+    .filters-section {
+        padding: 12px;
+    }
+
+    .filters-section h4 {
+        font-size: 16px;
+    }
+
+    /* Sidebar adjustments */
+    .sidebar {
+        width: 280px;
+        max-width: 80%;
+    }
+
+    .sidebar-header {
+        padding: 15px;
+    }
+
+    .sidebar-header h2 {
+        font-size: 20px;
+    }
+
+    .sidebar-menu a {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+
+    /* Burger menu position */
+    .burger-menu {
+        top: 75px;
+        left: 12px;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE (480px and below)
+======================================== */
+@media (max-width: 480px) {
+
+    /* Further reduce padding */
+    .main-content {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 12px;
+    }
+
+    .header-info h1 {
+        font-size: 20px;
+    }
+
+    .stat-card h3 {
+        font-size: 14px;
+    }
+
+    .stat-number {
+        font-size: 1.5em;
+    }
+
+    /* Tab buttons - even smaller */
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        min-width: 90px;
+    }
+
+    .tab-content h2 {
+        font-size: 18px;
+    }
+
+    /* Tables - compact view */
+    .table th,
+    .table td {
+        padding: 8px 6px;
+        font-size: 12px;
+    }
+
+    /* Hide less important columns on very small screens */
+    .table th:nth-child(n+5),
+    .table td:nth-child(n+5) {
+        display: none;
+    }
+
+    /* Show only essential columns */
+    .table th:nth-child(1),
+    .table th:nth-child(2),
+    .table th:nth-child(3),
+    .table th:last-child,
+    .table td:nth-child(1),
+    .table td:nth-child(2),
+    .table td:nth-child(3),
+    .table td:last-child {
+        display: table-cell;
+    }
+
+    /* Buttons - compact */
+    .btn {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .action-buttons .btn {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    /* Profile avatar - smaller */
+    .profile-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2em;
+    }
+
+    /* Stat boxes - compact */
+    .stat-box {
+        padding: 10px;
+    }
+
+    .stat-value {
+        font-size: 1.3em;
+    }
+
+    /* Sidebar - full width on very small screens */
+    .sidebar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Modal - full screen on small mobile */
+    .modal-content {
+        margin: 10px;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    /* Filter groups - compact */
+    .filter-group label {
+        font-size: 14px;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Form controls */
+    .form-control {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* ========================================
+   LANDSCAPE MOBILE ORIENTATION
+======================================== */
+@media (max-width: 900px) and (orientation: landscape) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        padding: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tab-btn {
+        padding: 8px 15px;
+    }
+}
+
+/* ========================================
+   UTILITY CLASSES FOR RESPONSIVE
+======================================== */
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+/* Hide on tablet */
+@media (max-width: 900px) {
+    .hide-tablet {
+        display: none !important;
+    }
+}
+
+/* Show only on mobile */
+.show-mobile {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .show-mobile {
+        display: block !important;
+    }
+}
+
+/* Scrollable table wrapper */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Touch-friendly spacing */
+@media (max-width: 768px) {
+    .touch-target {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+======================================== */
+@media print {
+
+    .sidebar,
+    .burger-menu,
+    .sidebar-overlay,
+    .action-buttons,
+    .tab-header {
+        display: none !important;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .table {
+        box-shadow: none;
+    }
+}
+/* Mobile tab hamburger */
+.tab-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #2c3e50;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .tab-hamburger {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .tab-buttons {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .tab-buttons.show {
+        display: flex;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        text-align: left;
+    }
+}

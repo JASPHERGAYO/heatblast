@@ -1,0 +1,345 @@
+/* ===========================================
+   ROOT VARIABLES
+=========================================== */
+:root {
+    --green: #00c476;
+    --nav-height: 64px;
+}
+
+/* ===========================================
+   GLOBAL (SAFE)
+=========================================== */
+body {
+    background: #f3fffb;
+}
+
+
+
+/* ===========================================
+   LOGIN PAGE STYLES
+=========================================== */
+
+/* Wrapper around auth card */
+.login-wrapper {
+    min-height: calc(100vh - var(--nav-height));
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+/* Auth card */
+.login-card {
+    width: 450px;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeLogin 0.5s ease;
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #0e8f5c;
+}
+
+/* Inputs for LOGIN ONLY */
+.login-card input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #c9e8db;
+    font-size: 16px;
+    outline: none;
+    transition: 0.25s;
+}
+
+.login-card input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 5px rgba(0, 196, 118, 0.4);
+}
+
+/* Checkbox Row */
+/* Fix terms row alignment */
+.terms-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 20px;
+}
+
+.terms-row a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.terms-row a:hover {
+    text-decoration: underline;
+}
+
+.terms-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 18px;
+}
+
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--green);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #029d63;
+    transform: scale(1.04);
+}
+
+/* Links */
+.login-links {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.login-links a {
+    color: #0e8f5c;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    margin-top: 6px;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* ===========================================
+   FIRST SETUP PAGE STYLES (SCOPED)
+=========================================== */
+
+/* Wrapper */
+.setup-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 90px !important;
+    /* prevents footer overlap */
+}
+
+/* Form card */
+.setup-card {
+    width: 420px;
+    padding: 25px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+}
+
+.setup-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Inputs + Selects (ONLY inside setup) */
+.setup-wrapper input,
+.setup-wrapper select {
+    width: 100%;
+    padding: 12px 13px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.setup-wrapper input:focus,
+.setup-wrapper select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 4px rgba(0, 196, 118, 0.4);
+}
+
+/* Button */
+.save-btn {
+    width: 100%;
+    background: #00c476;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-top: 8px;
+}
+
+.save-btn:hover {
+    background: #00aa63;
+}
+
+
+
+/* ===========================================
+   ANIMATIONS
+=========================================== */
+@keyframes fadeLogin {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+@media (max-width: 480px) {
+    .login-card {
+        width: 92%;
+        padding: 24px;
+    }
+
+    .setup-card {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* MODAL OVERLAY */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* MODAL BOX */
+.modal-box {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+    margin-top: 20px;
+    padding: 10px 16px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.password-container {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 14px 45px 14px 14px;
+    border-radius: 10px;
+    border: 1px solid #c9e8db;
+    font-size: 16px;
+    outline: none;
+    transition: 0.25s;
+}
+
+
+/* Password Container */
+.password-container {
+    position: relative;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 12px 45px 12px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.password-container input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+    outline: none;
+}
+
+/* Toggle Button */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #666;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 4px;
+}
+
+.toggle-password:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Password Strength Indicator (Optional) */
+.password-strength {
+    margin-top: 5px;
+    font-size: 13px;
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    background: #e74c3c;
+    transition: width 0.3s ease, background 0.3s ease;
+}

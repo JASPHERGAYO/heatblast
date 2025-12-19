@@ -1,0 +1,609 @@
+/* role_styles.css - Responsive Styles for Role Selection System */
+
+/* ===========================================
+   ROLE SELECTION PAGE (choose_role.php)
+=========================================== */
+
+/* Role Container */
+.role-container {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.role-title {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.role-subtitle {
+    color: #7f8c8d;
+    margin-bottom: 35px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Role Options */
+.role-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.role-btn {
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+}
+
+.role-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.role-btn.student-btn:hover {
+    border-color: #2ecc71;
+}
+
+.role-btn.admin-staff-btn:hover {
+    border-color: #e74c3c;
+}
+
+.role-icon {
+    font-size: 24px;
+    width: 50px;
+    text-align: center;
+}
+
+.role-info {
+    flex: 1;
+}
+
+.role-info h4 {
+    margin: 0 0 5px 0;
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+.role-info p {
+    margin: 0;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.role-btn .chevron {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.student-btn .role-icon {
+    color: #2ecc71;
+}
+
+.admin-staff-btn .role-icon {
+    color: #e74c3c;
+}
+
+.existing-account {
+    margin-top: 25px;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.existing-account a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.existing-account a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================================
+   ADMIN/STAFF REGISTRATION (register_admin_staff.php)
+=========================================== */
+
+.role-selection {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.role-selection .role-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.role-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.role-btn {
+    flex: 1;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.role-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.role-btn.selected {
+    border-color: currentColor;
+    background-color: rgba(0,0,0,0.03);
+}
+
+.role-btn.admin-btn {
+    color: #e74c3c;
+}
+
+.role-btn.admin-btn:hover, .role-btn.admin-btn.selected {
+    border-color: #e74c3c;
+}
+
+.role-btn.staff-btn {
+    color: #3498db;
+}
+
+.role-btn.staff-btn:hover, .role-btn.staff-btn.selected {
+    border-color: #3498db;
+}
+
+.role-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.registration-form {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.registration-form.active {
+    display: block;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #7f8c8d;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* ===========================================
+   OTP VERIFICATION (verify_admin_staff.php)
+=========================================== */
+
+.verification-container {
+    max-width: 450px;
+    margin: 80px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.verification-title {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.verification-message {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.verification-message strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.verification-message small {
+    color: #95a5a6;
+    font-size: 14px;
+}
+
+.otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.otp-input {
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.otp-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.error-message {
+    color: #e74c3c;
+    margin: 10px 0;
+    font-size: 14px;
+    padding: 10px;
+    background: #fdf2f2;
+    border-radius: 5px;
+}
+
+.success-message {
+    color: #27ae60;
+    margin: 10px 0;
+    font-size: 14px;
+    padding: 10px;
+    background: #eafaf1;
+    border-radius: 5px;
+}
+
+.resend-link {
+    margin-top: 25px;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.resend-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resend-link a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================================
+   REGISTER.PHP STYLES (for the link)
+=========================================== */
+
+.admin-staff-link {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.admin-staff-link p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.admin-staff-btn {
+    display: inline-block;
+    padding: 12px 25px;
+
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid #3498db;
+}
+
+.admin-staff-btn:hover {
+    background-color: white;
+
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+}
+
+.admin-staff-btn i {
+    margin-right: 8px;
+}
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    color: #7f8c8d;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.or-divider span {
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===========================================
+   ANIMATIONS
+=========================================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLogin {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+=========================================== */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .role-container,
+    .role-selection,
+    .verification-container {
+        width: 90%;
+        margin: 60px auto;
+        padding: 25px;
+    }
+    
+    .role-title {
+        font-size: 24px;
+    }
+    
+    .role-buttons {
+        flex-direction: column;
+    }
+    
+    .role-btn {
+        padding: 18px;
+        font-size: 15px;
+    }
+    
+    .otp-inputs {
+        gap: 8px;
+    }
+    
+    .otp-input {
+        width: 45px;
+        height: 55px;
+        font-size: 22px;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .role-container,
+    .role-selection,
+    .verification-container {
+        width: 95%;
+        margin: 40px auto;
+        padding: 20px;
+    }
+    
+    .role-title {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .role-subtitle {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    
+    .role-options {
+        gap: 12px;
+    }
+    
+    .role-btn {
+        padding: 15px;
+        font-size: 14px;
+        gap: 12px;
+    }
+    
+    .role-icon {
+        font-size: 20px;
+        width: 40px;
+    }
+    
+    .role-info h4 {
+        font-size: 16px;
+    }
+    
+    .role-info p {
+        font-size: 13px;
+    }
+    
+    .role-buttons {
+        gap: 12px;
+    }
+    
+    .otp-inputs {
+        gap: 6px;
+    }
+    
+    .otp-input {
+        width: 40px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .verification-title {
+        font-size: 24px;
+    }
+    
+    .verification-message {
+        font-size: 14px;
+    }
+    
+    .admin-staff-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .or-divider {
+        margin: 20px 0;
+    }
+}
+
+/* Small Mobile (360px and below) */
+@media (max-width: 360px) {
+    .role-btn {
+        padding: 12px;
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .role-info {
+        text-align: center;
+    }
+    
+    .otp-inputs {
+        gap: 5px;
+    }
+    
+    .otp-input {
+        width: 35px;
+        height: 45px;
+        font-size: 18px;
+    }
+    
+    .admin-staff-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    .role-container,
+    .role-selection,
+    .verification-container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+    
+    .role-title {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    
+    .role-subtitle {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    
+    .otp-inputs {
+        margin-bottom: 20px;
+    }
+    
+    .admin-staff-link {
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+}
+
+/* High Resolution Screens */
+@media (min-width: 1200px) {
+    .role-container,
+    .role-selection,
+    .verification-container {
+        max-width: 550px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .role-container,
+    .role-selection,
+    .verification-container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .role-btn:hover,
+    .admin-staff-btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* Accessibility: High Contrast Mode */
+@media (prefers-contrast: high) {
+    .role-btn {
+        border: 3px solid #000;
+    }
+    
+    .role-btn.selected {
+        border: 4px solid #000;
+    }
+    
+    .otp-input {
+        border: 2px solid #000;
+    }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .role-btn,
+    .admin-staff-btn,
+    .registration-form {
+        transition: none;
+        animation: none;
+    }
+    
+    .role-btn:hover {
+        transform: none;
+    }
+}
